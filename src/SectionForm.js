@@ -1,5 +1,6 @@
 import React from 'react';
 import './SectionForm.css';
+import Section from './Section.js';
 
 class SectionForm extends React.Component {
     constructor(props) {
@@ -7,15 +8,26 @@ class SectionForm extends React.Component {
 
         this.state = {
             value: '',
-            items: ['why', 'are', 'you']
+            items: ['why', 'are', 'you'],
+            sections: [<Section />]
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.appendSection = this.appendSection.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
+    }
+
+    appendSection() {
+        this.setState({
+            sections: [
+                ...this.state.sections,
+                <Section />
+            ]
+        })
     }
 
     handleSubmit(event) {
@@ -28,6 +40,7 @@ class SectionForm extends React.Component {
     render() {
         return (
             <div className="SectionFormMain">
+                <button className="btn" onClick={this.appendSection}>Add Section</button>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter Budget Item" />
                     <input type="submit" value="Submit" />
@@ -37,6 +50,7 @@ class SectionForm extends React.Component {
                         <li key={item}>{item}</li>
                     ))}
                 </ul>
+                {this.state.sections}
             </div>
         )
     }
