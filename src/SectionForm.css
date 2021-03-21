@@ -4,3 +4,10 @@
     background-color: darkgrey;
     width: fit-content;
 }
+
+.SectionFormBox {
+    text-align: left;
+    padding: 20px;
+    background-color: darkgrey;
+    width: fit-content;
+}

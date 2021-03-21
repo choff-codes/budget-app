@@ -1,0 +1,33 @@
+TO-DO:
+    - Cost adjustment checkboxes (adjust relative to the selected weekly/monthly/yearly)
+    - Boxes
+        - Movable components at some point
+    - Budget area
+        - Movable components as well
+        - Formatting/CSS work
+    - Info area on the side
+        - Should this be part of the Budget Area? (or would that be more of a headache)
+        - Salary field
+        - Money saving/"vacation" field
+    - Local storage so that refresh doesn't lose all the progress
+        - Way to reset all?
+    - toLocaleString for money conversion
+    - Base level css formatting (margins on the sides, boxes go left to right, etc.)
+    - Deletion
+        - The components themselves can be deleted, but their total have to be changed
+        - Best strategy might be using the baked in update method
+            - OR -
+            - Supply the delete method with the same data provided in update, and use that to modify the array and value!
+    
+DONE:
+    ✓ Budget Area button that creates the Boxes
+    ✓ Stateful Budget Area and Boxes
+    ✓ Editable name and value associated with said name
+    - Boxes
+        ✓ Total at the bottom
+        ✓ Maybe reconsider the design of a "Box"
+            ✓ Multiple components within a single box in of itself
+        ✓ Input type of number on the side
+    ✓ PARENT TO CHILD INTERACTIONS
+        ✓ Make the data used in the parent component predicated on Child Props, such that when the values are changed
+        it should automatically update - there are good tutorials on this
