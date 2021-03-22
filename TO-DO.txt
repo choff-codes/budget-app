@@ -13,6 +13,7 @@ TO-DO:
         - Way to reset all?
     - toLocaleString for money conversion
     - Base level css formatting (margins on the sides, boxes go left to right, etc.)
+        - grid, flexbox
     
 DONE:
     ✓ Deletion
