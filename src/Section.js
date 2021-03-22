@@ -17,20 +17,29 @@ class Section extends React.Component {
         this.appendBudget = this.appendBudget.bind(this);
     }
 
-    deleteBudget = (childNumber) => {
+    deleteBudget = (childData) => {
         // This is an unnecessary line of code as it can go straight into the setState, but it looks nicer imo
-        const shallowBudgets = this.state.budgets.filter((budget) => budget.props.budgNum !== childNumber);
+        // Filters through the budgets, removing the component associated with the correct ID
+        const shallowBudgets = this.state.budgets.filter((budget) => budget.props.budgNum !== childData[0]);
+
+        // Change the value correlated to this component in the cost array to 0
+        let shallowTotalCost = this.state.totalCost;
+        shallowTotalCost[childData[0]] = 0;
 
         this.setState({
-            budgets: shallowBudgets
+            budgets: shallowBudgets,
+            total: this.state.total - childData[1],
+            totalCost: shallowTotalCost
         });
     }
 
     updateTotal = (childData) => {
-        // let newTotal = Number(childData[0]);
+        // Build a copy of the current "cost array"
         let shallowTotalCost = this.state.totalCost;
         const reducer = (accumulator, currentValue) => Number(accumulator) + Number(currentValue);
 
+        // Change the assigned value to the current <Budget/> in the array
+        // The index of each array value here refers to a different budget, and their value is their total
         shallowTotalCost[childData[1]] = childData[0];
         let newTotal = shallowTotalCost.reduce(reducer);
 

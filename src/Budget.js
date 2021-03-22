@@ -13,7 +13,7 @@ function Budget(props) {
     
     return (
         <div>
-        <button className="btn" onClick={() => props.deleteBudget(props.budgNum)}>X</button>
+        <button className="btn" onClick={() => props.deleteBudget([props.budgNum, budgetCost])}>X</button>
         <Editable text={budgetText} placeholder="Budget expense" type="input" className="sideBySide">
                 <input type="text" name="budgetText" placeholder="Budget expense" 
                 value={budgetText} onChange={e => setName(e.target.value)}
