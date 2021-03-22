@@ -13,13 +13,9 @@ TO-DO:
         - Way to reset all?
     - toLocaleString for money conversion
     - Base level css formatting (margins on the sides, boxes go left to right, etc.)
-    - Deletion
-        - The components themselves can be deleted, but their total have to be changed
-        - Best strategy might be using the baked in update method
-            - OR -
-            - Supply the delete method with the same data provided in update, and use that to modify the array and value!
     
 DONE:
+    ✓ Deletion
     ✓ Budget Area button that creates the Boxes
     ✓ Stateful Budget Area and Boxes
     ✓ Editable name and value associated with said name

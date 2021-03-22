@@ -1,5 +1,4 @@
 import React from 'react';
-import Editable from "./Editable";
 import BoxTitle from './BoxTitle';
 import Budget from './Budget';
 
@@ -7,6 +6,7 @@ class Section extends React.Component {
     constructor(props) {
         super(props);
 
+        // This state architecture might be naive, maybe worth looking into the limits of an array expanding
         this.state = {
             budgetCount: 0,
             budgets: [],
@@ -47,6 +47,10 @@ class Section extends React.Component {
             totalCost: shallowTotalCost,
             total: newTotal
         })
+    }
+
+    componentDidUpdate() {
+        this.props.adjustTotal([this.state.total, this.props.sectionNum]);
     }
 
     appendBudget() {
