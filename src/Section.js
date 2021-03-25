@@ -1,6 +1,7 @@
 import React from 'react';
 import BoxTitle from './BoxTitle';
 import Budget from './Budget';
+import './SectionForm.css';
 
 class Section extends React.Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class Section extends React.Component {
 
     render() {
         return (
-            <div className="SectionFormMain">
+            <div className="item">
                 <button className="btn" onClick={() => this.props.deleteSection(this.props.sectionNum)}>X</button>
                 <BoxTitle/>
 

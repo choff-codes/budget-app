@@ -11,7 +11,7 @@ class SideBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="sidebar">
                 <h1>Side Bar</h1>
                 <h2>{this.props.total}</h2>
             </div>

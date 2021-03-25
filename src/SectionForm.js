@@ -56,9 +56,9 @@ class SectionForm extends React.Component {
 
     render() {
         return (
-            <div className="SectionFormMain">
+            <div className="SectionFormMain" class="flex-container">
                 <h2>{this.state.fullTotal}</h2>
-                <SideBar/>
+                <SideBar className="sidebar"/>
                 <button className="btn" onClick={this.appendSection}>Add Section</button>
                 {this.state.sections}
             </div>
